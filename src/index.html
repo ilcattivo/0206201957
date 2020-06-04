@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.min.css" />
+    <title>Frontend test</title>
+  </head>
+  <body>
+    <section class="person-info">
+      <div class="container">
+        <div class="person-info__top">
+          <h2 class="person-info__name">Вероника Ростова</h2>
+          <p class="person-info__position">Менеджер по продажам</p>
+          <img
+            src="images/avatar.png"
+            alt="Avatar"
+            class="person-info__avatar"
+          />
+          <p class="person-info__status">
+            Подберу для вас самые лучшие предложения. Мои услуги абсолютно
+            бесплатны
+          </p>
+        </div>
+        <div class="person-info__bottom">
+          <table class="person-info__table person-stats">
+            <thead>
+              <tr>
+                <th colspan="2">Услуг</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  Ручное бронирование
+                  <div
+                    class="person-stats__bg"
+                    style="background: #b1e19b; width: 219px;"
+                  ></div>
+                </td>
+                <td>11</td>
+              </tr>
+              <tr>
+                <td>
+                  Пакетные туры
+                  <div
+                    class="person-stats__bg"
+                    style="background: #ace2f8; width: 54px;"
+                  ></div>
+                </td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>
+                  Отели
+                  <div
+                    class="person-stats__bg"
+                    style="background: #ace2f8; width: 54px;"
+                  ></div>
+                </td>
+                <td>1</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td>Всего</td>
+                <td>15</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="last-reviews">
+      <div class="container">
+        <div class="last-reviews__header">
+          <h2 class="last-reviews__title">Последние отзывы</h2>
+          <a href="#" class="last-reviews__link">Все отзывы</a>
+          <div class="last-reviews__stats"></div>
+          <div class="last-reviews__likes">131</div>
+          <div class="last-reviews__comments">14</div>
+        </div>
+        <ul class="last-reviews__list" id="reviews-list">
+          <li class="last-reviews__item">
+            <div class="last-reviews__comment comment">
+              <div class="comment__header">
+                <a href="#" class="comment__name">Самуил</a>
+                <span class="comment__date">13 октября 2011</span>
+              </div>
+              <p class="comment__text">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam,
+                debitis!
+              </p>
+            </div>
+          </li>
+          <li class="last-reviews__item">
+            <div class="last-reviews__comment comment">
+              <div class="comment__header">
+                <a href="#" class="comment__name">Самуил</a>
+                <span class="comment__date">13 октября 2011</span>
+              </div>
+              <p class="comment__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Molestias in omnis cupiditate asperiores reiciendis, minima ipsa
+                nobis quisquam illo accusantium accusamus ea blanditiis a alias.
+              </p>
+            </div>
+          </li>
+          <li class="last-reviews__item">
+            <div class="last-reviews__comment comment">
+              <div class="comment__header">
+                <a href="#" class="comment__name">Самуил</a>
+                <span class="comment__date">13 октября 2011</span>
+              </div>
+              <p class="comment__text">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam,
+                debitis!
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="write-review">
+      <div class="container">
+        <form id="review-form" class="write-review__form">
+          <textarea
+            name="review"
+            id="review"
+            class="write-review__input"
+          ></textarea>
+          <button id="submit" class="write-review__submit">
+            Написать консультанту
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <script src="js/write-review.js"></script>
+  </body>
+</html>

@@ -1,0 +1,271 @@
+@import 'libs/normalize';
+
+$dark-grey: #333333;
+
+@mixin caption($fontSize: 14px) {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: $fontSize;
+  line-height: 20px;
+  color: $dark-grey;
+}
+
+@mixin title($fontSize: 16px) {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: $fontSize;
+  line-height: 20px;
+  color: $dark-grey;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+.container {
+  max-width: 680px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.person-info {
+  margin-bottom: 20px;
+
+  &__top {
+    position: relative;
+    min-height: 124px;
+    margin-bottom: 10px;
+  }
+
+  &__avatar {
+    position: absolute;
+    width: 124px;
+    height: 124px;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+  }
+
+  &__name {
+    @include title();
+    margin-top: 20px;
+    margin-bottom: 2px;
+    margin-left: 130px;
+  }
+
+  &__position {
+    @include caption(12px);
+    margin-bottom: 5px;
+    margin-left: 130px;
+  }
+
+  &__status {
+    @include caption();
+    margin-left: 89px;
+    padding: 10px 10px 10px 45px;
+    background-color: #fffbc8;
+    border: 1px solid #dadada;
+    border-radius: 5px;
+  }
+
+  &__table {
+    margin-left: auto;
+  }
+}
+
+.person-stats {
+  min-width: 317px;
+  border-collapse: collapse;
+
+  th {
+    @include caption(13px);
+    margin-left: auto;
+  }
+
+  tr {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  thead,
+  tbody,
+  tfoot {
+    display: block;
+    padding-right: 38px;
+  }
+
+  tbody {
+    margin-top: 7px;
+    margin-bottom: 9px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-top: 1px solid #dadada;
+    border-bottom: 1px solid #dadada;
+  }
+
+  tbody td {
+    @include caption(13px);
+    position: relative;
+    line-height: 24px;
+    padding-left: 6px;
+    margin-bottom: 2px;
+
+    &:last-child {
+      font-weight: bold;
+      text-align: right;
+    }
+  }
+
+  tfoot td {
+    @include title();
+    &:last-child {
+      text-align: right;
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    z-index: -1;
+    top: 2px;
+    left: 0;
+    height: 24px;
+    border-radius: 0px 3px 3px 0px;
+  }
+}
+
+.last-reviews {
+  &__header {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    @include title();
+    padding-right: 10px;
+  }
+
+  &__link {
+    @include caption();
+    color: #005da1;
+  }
+
+  &__stats {
+    margin-left: auto;
+  }
+
+  &__likes,
+  &__comments {
+    @include caption(12px);
+    padding-left: 20px;
+    background: left bottom / 16px no-repeat;
+  }
+
+  &__likes {
+    margin-right: 15px;
+    background-image: url('../images/like.svg');
+  }
+
+  &__comments {
+    background-image: url('../images/comment.svg');
+  }
+
+  @media screen and (max-width: 400px) {
+    &__title {
+      flex-basis: 100%;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.comment {
+  margin-bottom: 15px;
+
+  &__header {
+    margin-bottom: 10px;
+  }
+  &__name {
+    @include title(14px);
+    margin-right: 10px;
+    text-decoration: none;
+  }
+
+  &__date {
+    @include caption(12px);
+  }
+
+  &__text {
+    @include caption();
+    position: relative;
+    padding: 10px 20px;
+    background: #f2fbff;
+    border: 1px solid #c4cbcf;
+    box-shadow: 0px 4px 10px rgba(128, 128, 128, 0.1);
+    // Triangle border
+    &::after {
+      position: absolute;
+      z-index: 1;
+      content: '';
+      left: 20px;
+      top: -11px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 11px 0 0 11px;
+      border-color: transparent transparent transparent #c4cbcf;
+    }
+    // Triangle inner
+    &::before {
+      position: absolute;
+      z-index: 2;
+      content: '';
+      left: 21px;
+      top: -9px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 9px 0 0 9px;
+      border-color: transparent transparent transparent #f2fbff;
+    }
+  }
+}
+
+.write-review {
+  padding-top: 28px;
+  padding-bottom: 34px;
+  background-color: #f2f2f2;
+
+  &__input {
+    @include caption();
+    display: block;
+    margin-bottom: 23px;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #000000;
+    border-radius: 1px;
+    resize: none;
+  }
+
+  &__submit {
+    @include title();
+    display: block;
+    margin: 0 auto;
+    padding: 12px 43px;
+    background: #fdd639;
+    border: none;
+    border-radius: 23px;
+  }
+}
