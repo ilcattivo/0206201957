@@ -6,7 +6,7 @@ const reviewsList = document.getElementById('reviews-list');
 form.addEventListener('submit', (event) => {
   event.preventDefault();
 
-  if (!textArea.value) return;
+  if (!textArea.value.trim()) return;
 
   const name = 'Sample text';
 
